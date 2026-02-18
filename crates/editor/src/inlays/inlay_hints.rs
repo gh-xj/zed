@@ -852,9 +852,7 @@ impl Editor {
             .collect::<Vec<_>>();
         let hints_to_insert = multi_buffer_snapshot
             .text_anchors_to_visible_anchors(
-                new_hints
-                    .iter()
-                    .map(|(_, lsp_hint)| lsp_hint.position.clone()),
+                new_hints.iter().map(|(_, lsp_hint)| lsp_hint.position),
             )
             .into_iter()
             .zip(&new_hints)
